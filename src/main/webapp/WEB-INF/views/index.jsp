@@ -34,7 +34,7 @@
                 <span class="bar2"></span>
                 <span class="bar3"></span>
             </div>
-            <a class="navbar-brand top" href="/">
+            <a href="/">
                 <img src="/img/logo.png" alt="">
             </a>
 
@@ -46,7 +46,7 @@
                 <li><a href="#">Board</a></li>
 
                 <sec:authorize access="isAuthenticated()">
-                    <li><a href="#"><b>${principal.to.username}</b></a></li>
+                    <li><a href="/member/mypage"><b>${principal.to.username}</b></a></li>
                     <li><a href="/logout"><b>Log-out</b></a></li>
                 </sec:authorize>
                 <sec:authorize access="isAnonymous()">
