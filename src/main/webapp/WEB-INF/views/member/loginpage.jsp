@@ -207,9 +207,9 @@
                placeholder="비밀번호 입력"
                name="password"
                required >
-        <a class="outer-link pull-left" href="#">아이디 찾기</a>
+        <a class="outer-link pull-left" href="/findid">아이디 찾기</a>
         <span class="outer-link pull-left">&nbsp;|&nbsp;</span>
-        <a class="outer-link pull-left" href="#">비밀번호 재설정</a>
+        <a class="outer-link pull-left" href="/updatepassword">비밀번호 재설정</a>
         <button type="submit" class="btn btn-submit btn-default pull-right">로그인</button>
       </form>
     </div>

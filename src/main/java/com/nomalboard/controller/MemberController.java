@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
@@ -30,5 +31,32 @@ public class MemberController {
         return "mypage";
     }
 
+    @GetMapping("/findid")
+    public String findId() {
+        return "/member/findidpage";
+    }
+
+    @PostMapping("/findid")
+    public String findId(@RequestParam("email") String email, @RequestParam("password") String password, Model model) {
+        String username = memberService.findId(email, password);
+
+        model.addAttribute("username", username);
+
+        return "/member/findidok";
+    }
+
+    @GetMapping("/updatepassword")
+    public String updatePassword() {
+        return "/member/updatepasswordpage";
+    }
+
+    @PostMapping("/updatepassword")
+    public String updatePassword(MemberTO to, Model model) {
+
+        int flag = memberService.updatePassword(to);
+        model.addAttribute("flag", flag);
+
+        return "/member/updatepasswordok";
+    }
 
 }
